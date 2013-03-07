@@ -398,8 +398,11 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ios-clickstart/ios-clickstart-Prefix.pch";
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				INFOPLIST_FILE = "ios-clickstart/ios-clickstart-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -409,8 +412,11 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ios-clickstart/ios-clickstart-Prefix.pch";
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				INFOPLIST_FILE = "ios-clickstart/ios-clickstart-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
