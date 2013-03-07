@@ -12,13 +12,13 @@
 		0EF3E72716E8603E002F2A96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72616E8603E002F2A96 /* CoreGraphics.framework */; };
 		0EF3E72D16E8603E002F2A96 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0EF3E72B16E8603E002F2A96 /* InfoPlist.strings */; };
 		0EF3E72F16E8603E002F2A96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3E72E16E8603E002F2A96 /* main.m */; };
-		0EF3E73316E8603E002F2A96 /* cloudbeesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3E73216E8603E002F2A96 /* cloudbeesAppDelegate.m */; };
+		0EF3E73316E8603E002F2A96 /* CBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3E73216E8603E002F2A96 /* CBAppDelegate.m */; };
 		0EF3E73516E8603E002F2A96 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EF3E73416E8603E002F2A96 /* Default.png */; };
 		0EF3E73716E8603E002F2A96 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EF3E73616E8603E002F2A96 /* Default@2x.png */; };
 		0EF3E73916E8603E002F2A96 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EF3E73816E8603E002F2A96 /* Default-568h@2x.png */; };
-		0EF3E73C16E8603E002F2A96 /* cloudbeesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3E73B16E8603E002F2A96 /* cloudbeesViewController.m */; };
-		0EF3E73F16E8603E002F2A96 /* cloudbeesViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EF3E73D16E8603E002F2A96 /* cloudbeesViewController_iPhone.xib */; };
-		0EF3E74216E8603E002F2A96 /* cloudbeesViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EF3E74016E8603E002F2A96 /* cloudbeesViewController_iPad.xib */; };
+		0EF3E73C16E8603E002F2A96 /* CBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3E73B16E8603E002F2A96 /* CBViewController.m */; };
+		0EF3E73F16E8603E002F2A96 /* CBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EF3E73D16E8603E002F2A96 /* CBViewController_iPhone.xib */; };
+		0EF3E74216E8603E002F2A96 /* CBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EF3E74016E8603E002F2A96 /* CBViewController_iPad.xib */; };
 		0EF3E74A16E8603E002F2A96 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E74916E8603E002F2A96 /* SenTestingKit.framework */; };
 		0EF3E74B16E8603E002F2A96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72216E8603E002F2A96 /* UIKit.framework */; };
 		0EF3E74C16E8603E002F2A96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72416E8603E002F2A96 /* Foundation.framework */; };
@@ -45,15 +45,15 @@
 		0EF3E72C16E8603E002F2A96 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0EF3E72E16E8603E002F2A96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0EF3E73016E8603E002F2A96 /* ios-clickstart-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-clickstart-Prefix.pch"; sourceTree = "<group>"; };
-		0EF3E73116E8603E002F2A96 /* cloudbeesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cloudbeesAppDelegate.h; sourceTree = "<group>"; };
-		0EF3E73216E8603E002F2A96 /* cloudbeesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cloudbeesAppDelegate.m; sourceTree = "<group>"; };
+		0EF3E73116E8603E002F2A96 /* CBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBAppDelegate.h; sourceTree = "<group>"; };
+		0EF3E73216E8603E002F2A96 /* CBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBAppDelegate.m; sourceTree = "<group>"; };
 		0EF3E73416E8603E002F2A96 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0EF3E73616E8603E002F2A96 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0EF3E73816E8603E002F2A96 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		0EF3E73A16E8603E002F2A96 /* cloudbeesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cloudbeesViewController.h; sourceTree = "<group>"; };
-		0EF3E73B16E8603E002F2A96 /* cloudbeesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cloudbeesViewController.m; sourceTree = "<group>"; };
-		0EF3E73E16E8603E002F2A96 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/cloudbeesViewController_iPhone.xib; sourceTree = "<group>"; };
-		0EF3E74116E8603E002F2A96 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/cloudbeesViewController_iPad.xib; sourceTree = "<group>"; };
+		0EF3E73A16E8603E002F2A96 /* CBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBViewController.h; sourceTree = "<group>"; };
+		0EF3E73B16E8603E002F2A96 /* CBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBViewController.m; sourceTree = "<group>"; };
+		0EF3E73E16E8603E002F2A96 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CBViewController_iPhone.xib; sourceTree = "<group>"; };
+		0EF3E74116E8603E002F2A96 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CBViewController_iPad.xib; sourceTree = "<group>"; };
 		0EF3E74816E8603E002F2A96 /* ios-clickstartTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-clickstartTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF3E74916E8603E002F2A96 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0EF3E75116E8603E002F2A96 /* ios-clickstartTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ios-clickstartTests-Info.plist"; sourceTree = "<group>"; };
@@ -119,12 +119,12 @@
 		0EF3E72816E8603E002F2A96 /* ios-clickstart */ = {
 			isa = PBXGroup;
 			children = (
-				0EF3E73116E8603E002F2A96 /* cloudbeesAppDelegate.h */,
-				0EF3E73216E8603E002F2A96 /* cloudbeesAppDelegate.m */,
-				0EF3E73A16E8603E002F2A96 /* cloudbeesViewController.h */,
-				0EF3E73B16E8603E002F2A96 /* cloudbeesViewController.m */,
-				0EF3E73D16E8603E002F2A96 /* cloudbeesViewController_iPhone.xib */,
-				0EF3E74016E8603E002F2A96 /* cloudbeesViewController_iPad.xib */,
+				0EF3E73116E8603E002F2A96 /* CBAppDelegate.h */,
+				0EF3E73216E8603E002F2A96 /* CBAppDelegate.m */,
+				0EF3E73A16E8603E002F2A96 /* CBViewController.h */,
+				0EF3E73B16E8603E002F2A96 /* CBViewController.m */,
+				0EF3E74016E8603E002F2A96 /* CBViewController_iPad.xib */,
+				0EF3E73D16E8603E002F2A96 /* CBViewController_iPhone.xib */,
 				0EF3E72916E8603E002F2A96 /* Supporting Files */,
 			);
 			path = "ios-clickstart";
@@ -239,8 +239,8 @@
 				0EF3E73516E8603E002F2A96 /* Default.png in Resources */,
 				0EF3E73716E8603E002F2A96 /* Default@2x.png in Resources */,
 				0EF3E73916E8603E002F2A96 /* Default-568h@2x.png in Resources */,
-				0EF3E73F16E8603E002F2A96 /* cloudbeesViewController_iPhone.xib in Resources */,
-				0EF3E74216E8603E002F2A96 /* cloudbeesViewController_iPad.xib in Resources */,
+				0EF3E73F16E8603E002F2A96 /* CBViewController_iPhone.xib in Resources */,
+				0EF3E74216E8603E002F2A96 /* CBViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +276,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EF3E72F16E8603E002F2A96 /* main.m in Sources */,
-				0EF3E73316E8603E002F2A96 /* cloudbeesAppDelegate.m in Sources */,
-				0EF3E73C16E8603E002F2A96 /* cloudbeesViewController.m in Sources */,
+				0EF3E73316E8603E002F2A96 /* CBAppDelegate.m in Sources */,
+				0EF3E73C16E8603E002F2A96 /* CBViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,20 +308,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		0EF3E73D16E8603E002F2A96 /* cloudbeesViewController_iPhone.xib */ = {
+		0EF3E73D16E8603E002F2A96 /* CBViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0EF3E73E16E8603E002F2A96 /* en */,
 			);
-			name = cloudbeesViewController_iPhone.xib;
+			name = CBViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		0EF3E74016E8603E002F2A96 /* cloudbeesViewController_iPad.xib */ = {
+		0EF3E74016E8603E002F2A96 /* CBViewController_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0EF3E74116E8603E002F2A96 /* en */,
 			);
-			name = cloudbeesViewController_iPad.xib;
+			name = CBViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 		0EF3E75216E8603E002F2A96 /* InfoPlist.strings */ = {
@@ -468,6 +468,7 @@
 				0EF3E75C16E8603E002F2A96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0EF3E75D16E8603E002F2A96 /* Build configuration list for PBXNativeTarget "ios-clickstartTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +477,7 @@
 				0EF3E75F16E8603E002F2A96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
