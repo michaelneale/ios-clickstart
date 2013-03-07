@@ -1,0 +1,3 @@
+@interface CBViewController : UIViewController
+
+@end
