@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E220C0116EDD281004AF57B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E74916E8603E002F2A96 /* SenTestingKit.framework */; };
+		0E220C0216EDD281004AF57B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72216E8603E002F2A96 /* UIKit.framework */; };
+		0E220C0316EDD281004AF57B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72416E8603E002F2A96 /* Foundation.framework */; };
+		0E220C0916EDD281004AF57B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E220C0716EDD281004AF57B /* InfoPlist.strings */; };
+		0E220C0C16EDD281004AF57B /* ios_clickstartLogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E220C0B16EDD281004AF57B /* ios_clickstartLogicTests.m */; };
 		0EF3E72316E8603E002F2A96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72216E8603E002F2A96 /* UIKit.framework */; };
 		0EF3E72516E8603E002F2A96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72416E8603E002F2A96 /* Foundation.framework */; };
 		0EF3E72716E8603E002F2A96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72616E8603E002F2A96 /* CoreGraphics.framework */; };
@@ -37,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E220C0016EDD281004AF57B /* ios-clickstartLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-clickstartLogicTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E220C0616EDD281004AF57B /* ios-clickstartLogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ios-clickstartLogicTests-Info.plist"; sourceTree = "<group>"; };
+		0E220C0816EDD281004AF57B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0E220C0A16EDD281004AF57B /* ios_clickstartLogicTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_clickstartLogicTests.h; sourceTree = "<group>"; };
+		0E220C0B16EDD281004AF57B /* ios_clickstartLogicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_clickstartLogicTests.m; sourceTree = "<group>"; };
+		0E220C0D16EDD281004AF57B /* ios-clickstartLogicTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-clickstartLogicTests-Prefix.pch"; sourceTree = "<group>"; };
 		0EF3E71F16E8603E002F2A96 /* ios-clickstart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-clickstart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF3E72216E8603E002F2A96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0EF3E72416E8603E002F2A96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,6 +74,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E220BFC16EDD281004AF57B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E220C0116EDD281004AF57B /* SenTestingKit.framework in Frameworks */,
+				0E220C0216EDD281004AF57B /* UIKit.framework in Frameworks */,
+				0E220C0316EDD281004AF57B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EF3E71C16E8603E002F2A96 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,11 +107,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E220C0416EDD281004AF57B /* ios-clickstartLogicTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E220C0A16EDD281004AF57B /* ios_clickstartLogicTests.h */,
+				0E220C0B16EDD281004AF57B /* ios_clickstartLogicTests.m */,
+				0E220C0516EDD281004AF57B /* Supporting Files */,
+			);
+			path = "ios-clickstartLogicTests";
+			sourceTree = "<group>";
+		};
+		0E220C0516EDD281004AF57B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E220C0616EDD281004AF57B /* ios-clickstartLogicTests-Info.plist */,
+				0E220C0716EDD281004AF57B /* InfoPlist.strings */,
+				0E220C0D16EDD281004AF57B /* ios-clickstartLogicTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		0EF3E71616E8603E002F2A96 = {
 			isa = PBXGroup;
 			children = (
 				0EF3E72816E8603E002F2A96 /* ios-clickstart */,
 				0EF3E74F16E8603E002F2A96 /* ios-clickstartTests */,
+				0E220C0416EDD281004AF57B /* ios-clickstartLogicTests */,
 				0EF3E72116E8603E002F2A96 /* Frameworks */,
 				0EF3E72016E8603E002F2A96 /* Products */,
 			);
@@ -101,6 +143,7 @@
 			children = (
 				0EF3E71F16E8603E002F2A96 /* ios-clickstart.app */,
 				0EF3E74816E8603E002F2A96 /* ios-clickstartTests.octest */,
+				0E220C0016EDD281004AF57B /* ios-clickstartLogicTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +209,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0E220BFF16EDD281004AF57B /* ios-clickstartLogicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E220C1016EDD281004AF57B /* Build configuration list for PBXNativeTarget "ios-clickstartLogicTests" */;
+			buildPhases = (
+				0E220BFB16EDD281004AF57B /* Sources */,
+				0E220BFC16EDD281004AF57B /* Frameworks */,
+				0E220BFD16EDD281004AF57B /* Resources */,
+				0E220BFE16EDD281004AF57B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ios-clickstartLogicTests";
+			productName = "ios-clickstartLogicTests";
+			productReference = 0E220C0016EDD281004AF57B /* ios-clickstartLogicTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		0EF3E71E16E8603E002F2A96 /* ios-clickstart */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EF3E75A16E8603E002F2A96 /* Build configuration list for PBXNativeTarget "ios-clickstart" */;
@@ -226,11 +287,20 @@
 			targets = (
 				0EF3E71E16E8603E002F2A96 /* ios-clickstart */,
 				0EF3E74716E8603E002F2A96 /* ios-clickstartTests */,
+				0E220BFF16EDD281004AF57B /* ios-clickstartLogicTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E220BFD16EDD281004AF57B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E220C0916EDD281004AF57B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EF3E71D16E8603E002F2A96 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,6 +325,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0E220BFE16EDD281004AF57B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 		0EF3E74616E8603E002F2A96 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,6 +354,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E220BFB16EDD281004AF57B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E220C0C16EDD281004AF57B /* ios_clickstartLogicTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EF3E71B16E8603E002F2A96 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,6 +391,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0E220C0716EDD281004AF57B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E220C0816EDD281004AF57B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		0EF3E72B16E8603E002F2A96 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -335,6 +434,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0E220C0E16EDD281004AF57B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios-clickstartLogicTests/ios-clickstartLogicTests-Prefix.pch";
+				INFOPLIST_FILE = "ios-clickstartLogicTests/ios-clickstartLogicTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0E220C0F16EDD281004AF57B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios-clickstartLogicTests/ios-clickstartLogicTests-Prefix.pch";
+				INFOPLIST_FILE = "ios-clickstartLogicTests/ios-clickstartLogicTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		0EF3E75816E8603E002F2A96 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -458,6 +587,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E220C1016EDD281004AF57B /* Build configuration list for PBXNativeTarget "ios-clickstartLogicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E220C0E16EDD281004AF57B /* Debug */,
+				0E220C0F16EDD281004AF57B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		0EF3E71A16E8603E002F2A96 /* Build configuration list for PBXProject "ios-clickstart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
