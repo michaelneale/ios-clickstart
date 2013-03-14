@@ -29,4 +29,8 @@
 
 }
 
+- (NSString *)hello:(NSString *)name and:(NSString *)more {
+    return name;
+}
+
 @end

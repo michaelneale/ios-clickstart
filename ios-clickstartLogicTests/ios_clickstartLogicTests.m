@@ -7,6 +7,7 @@
 //
 
 #import "ios_clickstartLogicTests.h"
+#import "CBViewController.h"
 
 @implementation ios_clickstartLogicTests
 
@@ -28,6 +29,14 @@
 {
     STAssertEquals(@"this", @"this", @"Everything is ok");
 //    STFail(@"Unit tests are not implemented yet in ios-clickstartLogicTests");
+}
+
+- (void)testHello
+{
+    CBViewController *cont = [CBViewController alloc];
+
+    NSString *result = [cont hello:@"world" and:@"that is all"];
+    STAssertEquals(@"world", result, @"Hello to the world");
 }
 
 @end
