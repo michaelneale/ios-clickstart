@@ -12,6 +12,8 @@
 		0E220C0316EDD281004AF57B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72416E8603E002F2A96 /* Foundation.framework */; };
 		0E220C0916EDD281004AF57B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E220C0716EDD281004AF57B /* InfoPlist.strings */; };
 		0E220C0C16EDD281004AF57B /* ios_clickstartLogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E220C0B16EDD281004AF57B /* ios_clickstartLogicTests.m */; };
+		0E704D0216F15639007A8C3D /* CBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3E73216E8603E002F2A96 /* CBAppDelegate.m */; };
+		0E704D0416F15639007A8C3D /* CBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3E73B16E8603E002F2A96 /* CBViewController.m */; };
 		0EF3E72316E8603E002F2A96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72216E8603E002F2A96 /* UIKit.framework */; };
 		0EF3E72516E8603E002F2A96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72416E8603E002F2A96 /* Foundation.framework */; };
 		0EF3E72716E8603E002F2A96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72616E8603E002F2A96 /* CoreGraphics.framework */; };
@@ -25,6 +27,16 @@
 		0EF3E73F16E8603E002F2A96 /* CBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EF3E73D16E8603E002F2A96 /* CBViewController_iPhone.xib */; };
 		0EF3E74216E8603E002F2A96 /* CBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EF3E74016E8603E002F2A96 /* CBViewController_iPad.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E704CFF16F15631007A8C3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0EF3E71716E8603E002F2A96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EF3E71E16E8603E002F2A96;
+			remoteInfo = "ios-clickstart";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0E220C0016EDD281004AF57B /* ios-clickstartLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-clickstartLogicTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +182,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0E704D0016F15631007A8C3D /* PBXTargetDependency */,
 			);
 			name = "ios-clickstartLogicTests";
 			productName = "ios-clickstartLogicTests";
@@ -266,6 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E704D0216F15639007A8C3D /* CBAppDelegate.m in Sources */,
+				0E704D0416F15639007A8C3D /* CBViewController.m in Sources */,
 				0E220C0C16EDD281004AF57B /* ios_clickstartLogicTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +296,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E704D0016F15631007A8C3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0EF3E71E16E8603E002F2A96 /* ios-clickstart */;
+			targetProxy = 0E704CFF16F15631007A8C3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0E220C0716EDD281004AF57B /* InfoPlist.strings */ = {
