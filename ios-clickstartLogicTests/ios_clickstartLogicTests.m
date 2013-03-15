@@ -33,10 +33,11 @@
 
 - (void)testHello
 {
-    CBViewController *cont = [CBViewController alloc];
+    CBViewController *cont = [CBViewController new];
 
     NSString *result = [cont hello:@"world" and:@"that is all"];
     STAssertEquals(@"world", result, @"Hello to the world");
+
 }
 
 @end
