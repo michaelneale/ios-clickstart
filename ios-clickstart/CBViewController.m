@@ -2,7 +2,8 @@
 
 @interface CBViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *theLabel;
-
+@property (weak, nonatomic) IBOutlet UITextView *theResults;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBox;
 @end
 
 @implementation CBViewController
@@ -10,12 +11,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.theLabel.text = @"Initial value";
+    [[self theResults] setEditable:FALSE];
 }
 
 
 - (IBAction)theButton:(UIButton *)sender {
     [[self theLabel] setText:[[sender titleLabel] text]];
-    //self.theLabel.text = sender.titleLabel.text;
+    [[self theResults] setText:@"Stuff goes in here"];
 }
 
 - (IBAction)callWeb:(id)sender {
