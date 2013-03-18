@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E08ECFA16F2F92700700E55 /* CBNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0777016F2F897001F32E5 /* CBNetworkClient.m */; };
 		0E220C0116EDD281004AF57B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E74916E8603E002F2A96 /* SenTestingKit.framework */; };
 		0E220C0216EDD281004AF57B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72216E8603E002F2A96 /* UIKit.framework */; };
 		0E220C0316EDD281004AF57B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72416E8603E002F2A96 /* Foundation.framework */; };
@@ -14,6 +15,7 @@
 		0E220C0C16EDD281004AF57B /* ios_clickstartLogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E220C0B16EDD281004AF57B /* ios_clickstartLogicTests.m */; };
 		0E704D0216F15639007A8C3D /* CBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3E73216E8603E002F2A96 /* CBAppDelegate.m */; };
 		0E704D0416F15639007A8C3D /* CBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3E73B16E8603E002F2A96 /* CBViewController.m */; };
+		0EC0777116F2F897001F32E5 /* CBNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0777016F2F897001F32E5 /* CBNetworkClient.m */; };
 		0EF3E72316E8603E002F2A96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72216E8603E002F2A96 /* UIKit.framework */; };
 		0EF3E72516E8603E002F2A96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72416E8603E002F2A96 /* Foundation.framework */; };
 		0EF3E72716E8603E002F2A96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72616E8603E002F2A96 /* CoreGraphics.framework */; };
@@ -45,6 +47,8 @@
 		0E220C0A16EDD281004AF57B /* ios_clickstartLogicTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_clickstartLogicTests.h; sourceTree = "<group>"; };
 		0E220C0B16EDD281004AF57B /* ios_clickstartLogicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_clickstartLogicTests.m; sourceTree = "<group>"; };
 		0E220C0D16EDD281004AF57B /* ios-clickstartLogicTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-clickstartLogicTests-Prefix.pch"; sourceTree = "<group>"; };
+		0EC0776F16F2F897001F32E5 /* CBNetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNetworkClient.h; sourceTree = "<group>"; };
+		0EC0777016F2F897001F32E5 /* CBNetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNetworkClient.m; sourceTree = "<group>"; };
 		0EF3E71F16E8603E002F2A96 /* ios-clickstart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-clickstart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EF3E72216E8603E002F2A96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0EF3E72416E8603E002F2A96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -149,6 +153,8 @@
 				0EF3E74016E8603E002F2A96 /* CBViewController_iPad.xib */,
 				0EF3E73D16E8603E002F2A96 /* CBViewController_iPhone.xib */,
 				0EF3E72916E8603E002F2A96 /* Supporting Files */,
+				0EC0776F16F2F897001F32E5 /* CBNetworkClient.h */,
+				0EC0777016F2F897001F32E5 /* CBNetworkClient.m */,
 			);
 			path = "ios-clickstart";
 			sourceTree = "<group>";
@@ -279,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E08ECFA16F2F92700700E55 /* CBNetworkClient.m in Sources */,
 				0E704D0216F15639007A8C3D /* CBAppDelegate.m in Sources */,
 				0E704D0416F15639007A8C3D /* CBViewController.m in Sources */,
 				0E220C0C16EDD281004AF57B /* ios_clickstartLogicTests.m in Sources */,
@@ -292,6 +299,7 @@
 				0EF3E72F16E8603E002F2A96 /* main.m in Sources */,
 				0EF3E73316E8603E002F2A96 /* CBAppDelegate.m in Sources */,
 				0EF3E73C16E8603E002F2A96 /* CBViewController.m in Sources */,
+				0EC0777116F2F897001F32E5 /* CBNetworkClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

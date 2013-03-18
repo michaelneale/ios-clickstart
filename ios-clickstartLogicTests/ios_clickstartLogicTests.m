@@ -8,6 +8,7 @@
 
 #import "ios_clickstartLogicTests.h"
 #import "CBViewController.h"
+#import "CBNetworkClient.h"
 
 @implementation ios_clickstartLogicTests
 
@@ -28,16 +29,32 @@
 - (void)testExample
 {
     STAssertEquals(@"this", @"this", @"Everything is ok");
-//    STFail(@"Unit tests are not implemented yet in ios-clickstartLogicTests");
 }
 
 - (void)testHello
 {
     CBViewController *cont = [CBViewController new];
-
     NSString *result = [cont hello:@"world" and:@"that is all"];
-    STAssertEquals(@"world", result, @"Hello to the world");
+    STAssertEqualObjects(@"world", result, @"Hello to the world");
 
+}
+
+- (void) testHttpGet
+{
+    STAssertNotNil([CBNetworkClient httpGet:@"http://www.google.com"], @"We can reach google");
+}
+
+- (void) testJSON {
+    
+    NSString *responseString = @"{\"hello\":\"world\"}";
+    NSData* data = [responseString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSError *error;
+    id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    STAssertTrue([object isKindOfClass:[NSDictionary class]], @"We get a dictionary back");
+    
+    NSDictionary *fields = (NSDictionary *) object;
+    STAssertEqualObjects(@"world", [fields valueForKey:@"hello"], @"Hello world JSON");
 }
 
 @end
