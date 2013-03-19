@@ -12,13 +12,15 @@
 }
 
 + (NSDictionary *) performSearch:(NSString *)terms withHost:(NSString *)host {
-    NSString *url = [CBNetworkClient makeURL: host withPath:[@"search/" stringByAppendingString:terms]];
+    NSString *url = [CBNetworkClient makeURL: host withPath:[@"search/" stringByAppendingString:[terms stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     NSString *data = [CBNetworkClient httpGet:url];
     return [self parseJSON:data];
 }
 
+
 + (BOOL) saveDocument:(NSString *)doc withHost:(NSString *)host {
-    NSString *path = [@"store/" stringByAppendingString:doc];
+    
+    NSString *path = [@"store/" stringByAppendingString:[doc stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSString *data = [CBNetworkClient httpGet:[CBNetworkClient makeURL:host withPath:path]];
     return [self parseJSON:data] != nil;
 }

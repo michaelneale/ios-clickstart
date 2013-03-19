@@ -22,22 +22,22 @@ NSString *const HOST = @"http://localhost:9000/api";
     [[self searchBox] setPlaceholder:@"Search the knowledgebase"];
     self.theResults.delegate = self;
     self.view.backgroundColor = [UIColor blackColor];
-    [[self theResults] setReturnKeyType:UIReturnKeyDone];
+    [[self theResults] setReturnKeyType:UIReturnKeyDone];    
 }
 
 
 - (IBAction)saveUpdate:(id)sender {
-    
+    NSString *docText = [[self theResults] text];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        BOOL saved = [CBNetworkClient saveDocument:[self.theResults text] withHost:HOST];
-        if (!saved) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to save"
-                                                            message:@"May not be able to connect to server."
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
-        }
+        BOOL saved = [CBNetworkClient saveDocument:docText withHost:HOST];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (!saved) {
+                [self showMessage: @"Unable to save" message:@"may not be able to connect to the server"];
+            }
+            
+        });
+        
     });
 
 }
@@ -54,8 +54,9 @@ NSString *const HOST = @"http://localhost:9000/api";
 
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSString *searchText = [searchBar text];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSDictionary *data = [CBNetworkClient performSearch:[searchBar text] withHost:HOST];
+        NSDictionary *data = [CBNetworkClient performSearch:searchText withHost:HOST];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (data != nil) {
                 [[self theResults] setText: [data valueForKeyPath:@"result"]];
@@ -73,6 +74,16 @@ NSString *const HOST = @"http://localhost:9000/api";
  */
 - (NSString *)hello:(NSString *)name and:(NSString *)more {
     return name;
+}
+
+- (void) showMessage:(NSString *)heading message:(NSString *)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:heading
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+
 }
 
 @end
