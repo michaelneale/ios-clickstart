@@ -26,35 +26,30 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    STAssertEquals(@"this", @"this", @"Everything is ok");
-}
 
-- (void)testHello
+- (void)testOnAController
 {
     CBViewController *cont = [CBViewController new];
     NSString *result = [cont hello:@"world" and:@"that is all"];
     STAssertEqualObjects(@"world", result, @"Hello to the world");
-
 }
 
 - (void) testHttpGet
 {
+    STAssertNil([CBNetworkClient httpGet:@"http://localhost:9876"], @"Nil for no service");
     STAssertNotNil([CBNetworkClient httpGet:@"http://www.google.com"], @"We can reach google");
 }
 
-- (void) testJSON {
-    
-    NSString *responseString = @"{\"hello\":\"world\"}";
-    NSData* data = [responseString dataUsingEncoding:NSUTF8StringEncoding];
-    
-    NSError *error;
-    id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-    STAssertTrue([object isKindOfClass:[NSDictionary class]], @"We get a dictionary back");
-    
-    NSDictionary *fields = (NSDictionary *) object;
-    STAssertEqualObjects(@"world", [fields valueForKey:@"hello"], @"Hello world JSON");
+- (void) testParsingJSON {
+    NSDictionary *res = [CBNetworkClient parseJSON:@"{\"hello\":\"world\"}"];
+    STAssertNotNil(res, @"we get a dictionary");
+    STAssertEqualObjects(@"world", [res valueForKey:@"hello"], @"it should have this value");
+    STAssertNil([CBNetworkClient parseJSON:@"garbage"], @"should be nil as not json");
+    STAssertNil([CBNetworkClient parseJSON:nil], @"should handle nil");
+}
+
+- (void) testMakeUrl {
+    STAssertEqualObjects(@"base/path", [CBNetworkClient makeURL:@"base" withPath:@"path"], @"Check path");
 }
 
 @end

@@ -11,5 +11,9 @@
 @interface CBNetworkClient : NSObject
 
 + (NSString *) httpGet:(NSString *)url;
++ (NSDictionary *) parseJSON:(NSString *)responseString;
++ (NSDictionary *) performSearch:(NSString *)terms withHost:(NSString *)url;
++ (NSString *) makeURL:(NSString *)url withPath:(NSString *)path;
++ (BOOL) saveDocument:(NSString *)doc withHost:(NSString *)host;
 
 @end

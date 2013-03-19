@@ -8,6 +8,9 @@
 
 @implementation CBViewController
 
+/*
+ * Initialise the view on loading.
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.searchBox.prompt = @"Quick Start ios app for CloudBees";
@@ -46,8 +49,10 @@
     [searchBar resignFirstResponder];
 }
 
-//this is a placeholder for a method that you can unit tests
-//even if it is in a controller
+/*
+ * this is a placeholder for a method that you can unit tests
+ * even if it is in a controller 
+ */
 - (NSString *)hello:(NSString *)name and:(NSString *)more {
     return name;
 }

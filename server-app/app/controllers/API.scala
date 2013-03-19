@@ -6,8 +6,14 @@ import play.api.mvc._
 
 object API extends Controller {
   
-  def show_data = Action {
-    Ok(Json.toJson(Map("result" -> "data here")))
+  def search(query:String) = Action {    
+    Ok(Json.toJson(Map("result" -> ("data here " + System.currentTimeMillis) )))
   }
+
+  def store(doc:String) = Action { 
+        println("Storing " + doc)
+        Ok(Json.toJson(Map("result" -> "ok")))
+  }
+
 
 }

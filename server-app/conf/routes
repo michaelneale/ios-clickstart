@@ -5,7 +5,8 @@
 # Home page
 GET     /                         controllers.Application.index
 
-GET     /api/search                 controllers.API.show_data
+GET     /api/search/:query        controllers.API.search(query)
+GET     /api/store/:doc           controllers.API.store(doc)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
