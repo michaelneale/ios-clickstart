@@ -10,9 +10,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.theResults.text = @"-- search for something --";
+    self.searchBox.prompt = @"Quick Start ios app for CloudBees";
     self.searchBox.delegate = self;
+    self.theResults.text = @"";
+    [[self searchBox] setPlaceholder:@"Search the knowledgebase"];
     self.theResults.delegate = self;
+    self.view.backgroundColor = [UIColor blackColor];
     [[self theResults] setReturnKeyType:UIReturnKeyDone];
 }
 
