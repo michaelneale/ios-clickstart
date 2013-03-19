@@ -3,7 +3,7 @@
 @implementation CBNetworkClient
 
 + (NSString *) httpGet:(NSString *)url {
-    NSURL *site = [NSURL URLWithString:url];
+    NSURL *site = [NSURL URLWithString:url];    
     return [NSString stringWithContentsOfURL:site encoding:NSUTF8StringEncoding error:NULL];
 }
 
@@ -12,13 +12,13 @@
 }
 
 + (NSDictionary *) performSearch:(NSString *)terms withHost:(NSString *)host {
-    NSString *url = [CBNetworkClient makeURL: host withPath:[@"/search/" stringByAppendingString:terms]];
+    NSString *url = [CBNetworkClient makeURL: host withPath:[@"search/" stringByAppendingString:terms]];
     NSString *data = [CBNetworkClient httpGet:url];
     return [self parseJSON:data];
 }
 
 + (BOOL) saveDocument:(NSString *)doc withHost:(NSString *)host {
-    NSString *path = [@"/store/" stringByAppendingString:doc];
+    NSString *path = [@"store/" stringByAppendingString:doc];
     NSString *data = [CBNetworkClient httpGet:[CBNetworkClient makeURL:host withPath:path]];
     return [self parseJSON:data] != nil;
 }

@@ -8,6 +8,9 @@
 
 @implementation CBViewController
 
+//TODO: UPDATE ME TO YOUR REAL APP!
+NSString *const HOST = @"http://localhost:9000/api";
+
 /*
  * Initialise the view on loading.
  */
@@ -23,12 +26,18 @@
 }
 
 
-- (IBAction)callWeb:(id)sender {
+- (IBAction)saveUpdate:(id)sender {
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *stuff = [CBNetworkClient httpGet:@"http://www.google.com"];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[self theResults] setText: stuff];
-        });
+        BOOL saved = [CBNetworkClient saveDocument:[self.theResults text] withHost:HOST];
+        if (!saved) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to save"
+                                                            message:@"May not be able to connect to server."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
     });
 
 }
@@ -45,7 +54,16 @@
 
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    self.theResults.text = searchBar.text;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSDictionary *data = [CBNetworkClient performSearch:[searchBar text] withHost:HOST];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (data != nil) {
+                [[self theResults] setText: [data valueForKeyPath:@"result"]];
+            } else {
+                [[self theResults] setText: @"Nothing found"];
+            }
+        });
+    });    
     [searchBar resignFirstResponder];
 }
 
