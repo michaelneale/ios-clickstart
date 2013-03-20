@@ -1,0 +1,20 @@
+{
+    "id": "ios-clickstartr",
+    "name": "iOS starter app with DB connectivity and server side app",
+    "app-package": "https://s3.amazonaws.com/cloudbees-downloads/webapp.war",
+    "description": "Simple war deployed through clickstart",
+    "icon" : "https://raw.github.com/CloudBees-community/simple-war-clickstart/master/icon.png",
+    "disabled" : true,
+    "app-package-type": "war",
+    "runtime": {
+        "type": "tomcat"
+    },
+    "services" : [
+     {
+      "name" : "cloudant",
+      "plan" : "oxygen",
+      "settings" : {}
+     }     
+     ]
+
+}
