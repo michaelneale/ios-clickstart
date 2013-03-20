@@ -336,7 +336,7 @@ class Stemmer
 
 object StringStemmer {
   def stem(input: String) = {
-    val stemmed = input.split(" ").map{s => 
+    val stemmed = input.toLowerCase.split(" ").map{s => 
       val stemmer = new Stemmer
       stemmer.add(s)
       stemmer.step1()

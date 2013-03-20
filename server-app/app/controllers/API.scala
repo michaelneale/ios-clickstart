@@ -12,10 +12,12 @@ object API extends Controller {
 
   /** Search for the stemmed query */
   def search(query:String) = Action {   
-    println("searching for " + query) 
     Async {
         CouchDB.search(StringStemmer.stem(query)).map { response => 
-            Ok(Json.toJson(Map("result" -> (response.json \ "content").as[String])))
+            if (response.status == 404) 
+                NotFound("No match")
+             else 
+                Ok(Json.toJson(Map("result" -> (response.json \ "content").as[String])))
         }
     }    
   }
@@ -23,10 +25,8 @@ object API extends Controller {
 
   /** Store the doc - use the first line, stemmed, as the key */
 
-  def store(doc:String) = Action {         
-    println("storing " + doc)
-    val stemmed_key = StringStemmer.stem( doc.split("\n")(0))
-    println("Stemmed key is:" + stemmed_key)
+  def store(doc:String) = Action {            
+    val stemmed_key = StringStemmer.stem( doc.split("\n")(0))   
     Async {
         CouchDB.store(stemmed_key, doc).map { response => 
             Ok(Json.toJson(Map("result" -> "ok")))
@@ -42,10 +42,12 @@ object CouchDB {
     import com.ning.http.client.Realm.AuthScheme
     def search(key: String) = {        
         val con = connection.getOrElse(null)                
+        println("Searching for:" + key)
         WS.url(con.url + "/" + con.db + "/" + key).withAuth(con.user, con.pass, AuthScheme.BASIC).get()        
     }
 
     def store(key: String, value: String) = {
+        println("Storing key:"+key + " with value:" + value)
         val con = connection.getOrElse(null)                
         WS.url(con.url + "/" + con.db + "/" + key)
         .withAuth(con.user, con.pass, AuthScheme.BASIC)
