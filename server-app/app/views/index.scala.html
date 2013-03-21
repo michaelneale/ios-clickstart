@@ -1,7 +1,71 @@
 @(message: String)
 
 @main("Welcome to Play 2.1") {
+
+<link rel="stylesheet" media="screen" href="/@@documentation/resources/style/main.css">
+
+<section id="top">
+    <div class="wrapper">
+        <h1>Application running on CloudBees</h1>
+    </div>
+</section>
+
+<div id="content" class="wrapper doc">
+
+
+        <article>
+
+            <h2>iOS ClickStart deployed successfully</h2>
+
+
+            <blockquote>
+                <p>
+                 Congratulations, you’ve gotten started with iOS, just a few more steps to go, read on.
+
+                </p>
+            </blockquote>
+
+            <h2>Why do you see this page?</h2>
+
+            <p>
+                This is the backend app for your iOS application. Most of the action happens under the /api url, but this page provides instructions of how to continue developing your iOS app. 
+            </p>
+
+<pre><code># Home page
+GET     /               controllers.Application.index</code></pre>
+
+            <p>
+                Play has invoked the <code>controllers.Application.index</code> method to obtain the <code>Action</code> to execute:
+            </p>
+
+<pre><code>def index = Action {
+  Ok(views.html.index("Your new application is ready!"))
+}</code></pre>
+
+
+
+            <h2>Need more help?</h2>
+
+
+            <p>
+                The <a href="http://groups.google.com/group/cloudbees-dev">CloudBees Google Group</a> is where you can ask questions.
+                <strong>cloudbees-dev@@subscribe-googlegroups.com</strong>.
+            </p>
+
+        </article>    
+        <aside>
+            <h3>Browse</h3>
+            <ul>
+                <li><a href="/">What are ClickStarts?</a></li>
+                <li><a href="/">More CloudBees info</a></li>
+                <li><a href="/">iOS devleopment resources</a></li>
+                <li><a href="https://github.com/CloudBees-community/ios-clickstart">Fork this repo - make it better</a></li>
+            </ul>
+        </aside>
+
     
-    @play20.welcome("hey there")
+
+
+</div>    
     
 }
