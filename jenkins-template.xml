@@ -24,18 +24,18 @@
             <list reference="../c"/>
           </targets>
           <user>(jenkins)</user>
-          <account>michaelnealeclickstart2</account>
+          <account>${account}</account>
         </com.cloudbees.plugins.deployer.impl.run.RunHostImpl>
       </hosts>
     </com.cloudbees.plugins.deployer.DeployNowJobProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@1.1.26">
+  <scm class="hudson.plugins.git.GitSCM">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
         <name></name>
         <refspec></refspec>
-        <url>git://github.com/michaelneale/ios-clickstart.git</url>
+        <url>${repositoryUrl}</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>

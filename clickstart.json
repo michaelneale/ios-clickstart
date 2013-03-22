@@ -1,14 +1,28 @@
 {
-    "id": "ios-clickstartr",
-    "name": "iOS starter app with DB connectivity and server side app",
-    "app-package": "https://s3.amazonaws.com/cloudbees-downloads/webapp.war",
-    "description": "Simple war deployed through clickstart",
+    "id": "ios-clickstart",
+    "name": "iOS starter app with CouchDB based server side app",   
+    "description": "iOS seed app showing how CI works with iOS on CloudBees - as a starting point",
     "icon" : "https://raw.github.com/CloudBees-community/simple-war-clickstart/master/icon.png",
-    "disabled" : true,
-    "app-package-type": "war",
+    "app-package" : "https://s3.amazonaws.com/cloudbees-downloads/clickstart/play21-hello.zip",
+    "app-package-type" : "zip",
+
+
     "runtime": {
-        "type": "tomcat"
+        "type": "play2",
+        "app-variables" : { 
+            "couchdb_name" : "$RANDOM_VALUE"
+        }
     },
+
+    "build-with-jenkins": {
+      "plugins" : ["xcode-plugin"],
+      "template": {
+              "type": "https://raw.github.com/michaelneale/ios-clickstart/master/jenkins-template.xml",
+              "options": {
+              }            
+          }
+    },
+
     "services" : [
      {
       "name" : "cloudant",
