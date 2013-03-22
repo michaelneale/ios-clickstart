@@ -28,8 +28,30 @@
             <h2>Why do you see this page?</h2>
 
             <p>
-                This is the backend app for your iOS application. Most of the action happens under the /api url, but this page provides instructions of how to continue developing your iOS app. 
+                You just created a new starter-iOS app, a backend API application (Play! framework), a CouchDB database, and a Jenkins build pipeline to build, test and deploy the lot from your own private repository. Quite an effort!                
             </p>
+            <p>
+                This web page is served from the backend app for your iOS application. 
+            </p>
+
+
+            <h2>Next steps</h2>
+            <p>
+                Ensure you have <a href="https://grandcentral.cloudbees.com/user/keys"> ssh keys setup with CloudBees</a>.
+            </p>
+            <p>
+                Connect your OS-X environment to Jenkins for automated builds:
+                
+<pre><code>(requires xcode and xcode command line tools installed)
+download the <a href="https://jenkins.ci.cloudbees.com/jnlpJars/jenkins-cli.jar">Jenkins command line tool</a>
+mkdir ~/jenkins_slave
+java -jar ~/jenkins_slave/jenkins-cli.jar -s https://<script>document.write(location.hostname.split(".")[1])</script>.ci.cloudbees.com customer-managed-slave -fsroot ~/jenkins_slave/FSROOT -labels xcode -name mobile-build-slave-xcloud
+</code></pre>                
+
+Now your OS-X/xcode environment is connected to Jenkins, and any builds you run will also run the iOS test/build step on OS-X.
+            </p>
+
+
 
 <pre><code># Home page
 GET     /               controllers.Application.index</code></pre>
@@ -58,8 +80,8 @@ GET     /               controllers.Application.index</code></pre>
             <ul>
                 <li><a href="/">What are ClickStarts?</a></li>
                 <li><a href="/">More CloudBees info</a></li>
-                <li><a href="/">iOS devleopment resources</a></li>
-                <li><a href="https://github.com/CloudBees-community/ios-clickstart">Fork this repo - make it better</a></li>
+                <li><a href="/">iOS devleopment resources</a></li>                
+                <li><a href="https://github.com/CloudBees-community/ios-clickstart">Fork this clickstart - make it better</a></li>
             </ul>
         </aside>
 
