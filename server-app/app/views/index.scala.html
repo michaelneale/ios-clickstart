@@ -1,22 +1,18 @@
 @(message: String)
 
-@main("Welcome to Play 2.1") {
-
-<link rel="stylesheet" media="screen" href="/@@documentation/resources/style/main.css">
+@main("iOS on CloudBees") {
 
 <section id="top">
     <div class="wrapper">
-        <h1>Application running on CloudBees</h1>
+        <h1>iOS development with CloudBees</h1>
     </div>
 </section>
 
 <div id="content" class="wrapper doc">
 
-
         <article>
 
             <h2>iOS ClickStart deployed successfully</h2>
-
 
             <blockquote>
                 <p>
@@ -28,47 +24,74 @@
             <h2>Why do you see this page?</h2>
 
             <p>
-                You just created a new starter-iOS app, a backend API application (Play! framework), a CouchDB database, and a Jenkins build pipeline to build, test and deploy the lot from your own private repository. Quite an effort!                
+                You just created a new starter-iOS app. This has created a Jenkins job, and a backend service with CouchDB. This can serve as a starting point, delete what you don't need.                
             </p>
-            <p>
-                This web page is served from the backend app for your iOS application. 
-            </p>
-
 
             <h2>Next steps</h2>
             <p>
-                Ensure you have <a href="https://grandcentral.cloudbees.com/user/keys"> ssh keys setup with CloudBees</a>.
+                Firstly, ensure you have <a href="https://grandcentral.cloudbees.com/user/keys"> ssh keys setup with CloudBees</a> and you have XCode available with the command line tools on your OS-X machine.
             </p>
             <p>
                 Connect your OS-X environment to Jenkins for automated builds:
                 
-<pre><code>(requires xcode and xcode command line tools installed)
+<pre><code>open a new terminal window
 download the <a href="https://jenkins.ci.cloudbees.com/jnlpJars/jenkins-cli.jar">Jenkins command line tool</a>
 mkdir ~/jenkins_slave
 java -jar ~/jenkins_slave/jenkins-cli.jar -s https://<script>document.write(location.hostname.split(".")[1])</script>.ci.cloudbees.com customer-managed-slave -fsroot ~/jenkins_slave/FSROOT -labels xcode -name mobile-build-slave-xcloud
 </code></pre>                
 
-Now your OS-X/xcode environment is connected to Jenkins, and any builds you run will also run the iOS test/build step on OS-X.
+Leave this running in terminal, now your OS-X/xcode environment is connected to Jenkins, and can be used to perform build/test steps.
             </p>
+<blockquote>
+If you take a quick look at the Jenkins console <a href="jenkins">now </a> you will see that a build is waiting. This will automatically complete as you follow along these steps.
+</blockquote>
+
+Now clone your private repository: 
+<pre><code>git clone ssh://git@@git.cloudbees.com/<script>document.write(location.hostname.split(".")[1])</script>/<script>document.write(location.hostname.split(".")[0])</script>.git
+</code></pre>
+
+Open this project in XCode, you can run it now. Have a look around. If you try to use the app, it will fail, as it is trying to talk to a local server. Open the file CBViewController.m, look for
+
+<pre><code>//TODO: UPDATE ME TO YOUR REAL APP!
+NSString *const HOST = @@"http://localhost:9000/api";
+</code></pre>
+
+Change that to be the url: <pre><code>
+ <script>document.write(location.hostname.split(".")[1])</script>/api
+</code></pre>
+Then run the app again - you shoud be able to save new items, and search for them. 
+
+Finally - commit the change you made:
+
+<pre><code>
+git add .
+git commit -m "fixed the endpoint"
+git push origin master
+</code></pre>
+
+This will trigger a build of your app, and test (there are unit/logic tests included in this starter project)
+
+Head on over to your <a href="jenkins">Jenkins console</a> to see the results of this, change the config, enter in emails of who to blame when the build breaks etc.
+
+
+<script>
+    var account = location.hostname.split(".")[1];
+    var app = location.hostname.split(".")[0];
+    $("a[href='jenkins']").attr('href', 'https://' + account + ".ci.cloudbees.com/job/" + app);
+</script>
 
 
 
-<pre><code># Home page
-GET     /               controllers.Application.index</code></pre>
+    <h2>
+        What do I do with this app?
+    </h2>
+    This app is a silly "note taker" style of app, with a search that uses "porter stemming" to search for similar words - consider it a starting point that shows how to unit test and automate.
 
-            <p>
-                Play has invoked the <code>controllers.Application.index</code> method to obtain the <code>Action</code> to execute:
-            </p>
-
-<pre><code>def index = Action {
-  Ok(views.html.index("Your new application is ready!"))
-}</code></pre>
-
-
+    <p>
+    In this app there is a simple "back end service" - which talks to CouchDB, does some processing for text searching.
+    That is located in the server-app directory of your code. The unit tests should be fairly easy to find in XCode. Delete what you don't need, you don't need to use the CouchDB database, or the server app. Use this as a starting point.
 
             <h2>Need more help?</h2>
-
-
             <p>
                 The <a href="http://groups.google.com/group/cloudbees-dev">CloudBees Google Group</a> is where you can ask questions.
                 <strong>cloudbees-dev@@subscribe-googlegroups.com</strong>.
@@ -78,10 +101,11 @@ GET     /               controllers.Application.index</code></pre>
         <aside>
             <h3>Browse</h3>
             <ul>
-                <li><a href="/">What are ClickStarts?</a></li>
-                <li><a href="/">More CloudBees info</a></li>
-                <li><a href="/">iOS devleopment resources</a></li>                
+                <li><a href="https://developer.cloudbees.com/bin/view/RUN/ClickStart">What are ClickStarts?</a></li>
+                <li><a href="https://developer.cloudbees.com">More CloudBees info</a></li>
+                <li><a href="http://developer.cloudbees.com/bin/view/Main/#CB_tools_ios">iOS devleopment resources</a></li>                
                 <li><a href="https://github.com/CloudBees-community/ios-clickstart">Fork this clickstart - make it better</a></li>
+                <li><a href="https://developer.cloudbees.com/bin/view/DEV/Building_XCode_Applications_and_Mac_Executors">Help preparing OS-X</a></li>
             </ul>
         </aside>
 
