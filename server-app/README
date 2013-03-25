@@ -1,4 +1,20 @@
-This is your new Play 2.1 application
-=====================================
+This is the backend for the ios-clickstart application
 
-This file will be packaged with your application, when using `play dist`.
+To run this locally, set the following environment variables to connect to a couchDB server:
+
+cloudant_server_address
+cloudant_username
+cloudant_password
+couchdb_name (the name you want it to use in the DB)
+
+run locally in dev mode: 
+play run
+
+deploy:
+
+play dist
+bees app:deploy -type play2 -a yourAppId dist/app name.zip
+
+
+
+
