@@ -10,10 +10,11 @@
 
 @interface CBNetworkClient : NSObject
 
-+ (NSString *) httpGet:(NSString *)url;
-+ (NSDictionary *) parseJSON:(NSString *)responseString;
-+ (NSDictionary *) performSearch:(NSString *)terms withHost:(NSString *)url;
-+ (NSString *) makeURL:(NSString *)url withPath:(NSString *)path;
-+ (BOOL) saveDocument:(NSString *)doc withHost:(NSString *)host;
+- (NSString *) stringHttpGetContentsAtURL:(NSString *)url;
+- (NSDictionary *) parseJSON:(NSString *)responseString;
+- (NSDictionary *) performSearch:(NSString *)terms withHost:(NSString *)url;
+- (NSString *) makeURL:(NSString *)url withPath:(NSString *)path;
+- (BOOL) saveDocument:(NSString *)doc withHost:(NSString *)host;
++ (CBNetworkClient *)sharedNetworkClient;
 
 @end

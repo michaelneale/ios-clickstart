@@ -4,12 +4,15 @@
 @interface CBViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *theResults;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBox;
+
 @end
 
 @implementation CBViewController
 
+
+
 //TODO: UPDATE ME TO YOUR REAL APP!
-NSString *const HOST = @"http://localhost:9000/api";
+static NSString *const HOST = @"http://localhost:9000/api";
 
 /*
  * Initialise the view on loading.
@@ -26,20 +29,19 @@ NSString *const HOST = @"http://localhost:9000/api";
 }
 
 
+
+
 - (IBAction)saveUpdate:(id)sender {
+    CBNetworkClient *client = [CBNetworkClient sharedNetworkClient];
     NSString *docText = [[self theResults] text];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        BOOL saved = [CBNetworkClient saveDocument:docText withHost:HOST];
-        
+        BOOL saved = [client saveDocument:docText withHost:HOST];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (!saved) {
                 [self showMessage: @"Unable to save" message:@"may not be able to connect to the server"];
             }
-            
         });
-        
     });
-
 }
 
 
@@ -54,9 +56,11 @@ NSString *const HOST = @"http://localhost:9000/api";
 
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    
+    CBNetworkClient *client = [CBNetworkClient sharedNetworkClient];
     NSString *searchText = [searchBar text];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSDictionary *data = [CBNetworkClient performSearch:searchText withHost:HOST];
+        NSDictionary *data = [client performSearch:searchText withHost:HOST];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (data != nil) {
                 [[self theResults] setText: [data valueForKeyPath:@"result"]];
@@ -68,13 +72,17 @@ NSString *const HOST = @"http://localhost:9000/api";
     [searchBar resignFirstResponder];
 }
 
+
 /*
  * this is a placeholder for a method that you can unit tests
  * even if it is in a controller 
  */
-- (NSString *)hello:(NSString *)name and:(NSString *)more {
+- (NSString *)hello:(NSString *)name more:(NSString *)more {
     return name;
 }
+
+
+
 
 - (void) showMessage:(NSString *)heading message:(NSString *)message {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:heading
