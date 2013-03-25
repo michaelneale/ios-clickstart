@@ -22,6 +22,18 @@ object API extends Controller {
     }    
   }
 
+  def slave_script(account: String) = Action {   
+ Ok("""
+#!/bin/sh
+
+if [ ! -e jenkins-cli.jar ]
+then
+wget https://jenkins.ci.cloudbees.com/jnlpJars/jenkins-cli.jar
+fi
+java -jar jenkins-cli.jar -s https://""" + account + """.ci.cloudbees.com customer-managed-slave -fsroot ~/jenkins_slave/FSROOT -labels xcode -name mobile-build-slave-xcloud
+""")
+  }
+
 
   /** Store the doc - use the first line, stemmed, as the key */
 

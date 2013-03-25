@@ -19,7 +19,7 @@ class IntegrationSpec extends Specification {
 
         browser.goTo("http://localhost:3333/")
 
-        browser.pageSource must contain("hey there")
+        browser.pageSource must contain("iOS")
        
       }
     }
