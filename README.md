@@ -1,5 +1,8 @@
+# Interested in iOS development, CloudBees and Jenkins?
+Then this is for you!
+
 This is a quick start project for iOS with automated unit testing, 
-a jenkins build controlling xcode and a backend service using CouchDB. 
+a Jenkins build controlling xcode and a backend service using CouchDB. 
 Intended to be used as a "seed" for common database backed iOS apps.
 
 You don't have to use all of it, just press the button, get your own version of it going, and go from there.
