@@ -21,6 +21,8 @@
                 </p>
             </blockquote>
 
+
+
             <h2>Why do you see this page?</h2>
 
             <p>
@@ -34,8 +36,8 @@
             <p>
                 Connect your OS-X environment to Jenkins for automated builds:
                 
-<pre><code>open a new terminal window
-download the <a href="https://jenkins.ci.cloudbees.com/jnlpJars/jenkins-cli.jar">Jenkins command line tool</a>
+<pre><code>1. Open a new terminal window
+2. Download the <a href="https://jenkins.ci.cloudbees.com/jnlpJars/jenkins-cli.jar">Jenkins command line tool</a>
 mkdir ~/jenkins_slave
 java -jar ~/jenkins_slave/jenkins-cli.jar -s https://<script>document.write(location.hostname.split(".")[1])</script>.ci.cloudbees.com customer-managed-slave -fsroot ~/jenkins_slave/FSROOT -labels xcode -name mobile-build-slave-xcloud
 </code></pre>                
@@ -107,6 +109,7 @@ Head on over to your <a href="jenkins">Jenkins console</a> to see the results of
                 <li><a href="https://github.com/CloudBees-community/ios-clickstart">Fork this clickstart - make it better</a></li>
                 <li><a href="https://developer.cloudbees.com/bin/view/DEV/Building_XCode_Applications_and_Mac_Executors">Help preparing OS-X</a></li>
             </ul>
+            <img src="/assets/images/screenshot.png">
         </aside>
 
     
