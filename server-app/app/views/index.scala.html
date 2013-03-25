@@ -55,18 +55,16 @@ Now clone your private repository:
 Open this project in XCode, you can run it now. Have a look around. If you try to use the app, it will fail, as it is trying to talk to a local server. Open the file CBViewController.m, look for
 
 <pre><code>//TODO: UPDATE ME TO YOUR REAL APP!
-NSString *const HOST = @@"http://localhost:9000/api";
+static NSString *const HOST = @@"http://localhost:9000/api";
 </code></pre>
 
-Change that to be the url: <pre><code>
- <script>document.write(location.hostname.split(".")[1])</script>/api
+Change that to be the url: <pre><code>http://<script>document.write(location.hostname)</script>/api
 </code></pre>
 Then run the app again - you shoud be able to save new items, and search for them. 
 
 Finally - commit the change you made:
 
-<pre><code>
-git add .
+<pre><code>git add .
 git commit -m "fixed the endpoint"
 git push origin master
 </code></pre>
