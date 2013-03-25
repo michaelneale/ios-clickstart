@@ -19,5 +19,7 @@ Once it is running - it will tell you what to do next to make it your own.
 
 
 
+Tip: to run unit tests locally, by hand, outside of the IDE:
+xcodebuild -target ios-clickstartLogicTests -sdk iphonesimulator -configuration Debug TEST_AFTER_BUILD=YES clean build
 
 
