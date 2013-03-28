@@ -1,9 +1,9 @@
 {
     "id": "ios-clickstart",
-    "name": "iOS starter app with CouchDB based server side app",   
-    "description": "iOS seed app showing how CI works with iOS on CloudBees - as a starting point",
+    "name": "iOS app with CouchDB based backend service",   
+    "description": "iOS starter app showing how CI works with iOS on CloudBees - as a starting point",
     "source": "github",
-    "icon" : "https://d3ko533tu1ozfq.cloudfront.net/clickstart/xcode_icon.png",
+    "icon" : "https://d3ko533tu1ozfq.cloudfront.net/clickstart/sencha_icon.png",
     "app-package" : "https://s3.amazonaws.com/cloudbees-downloads/clickstart/ios-clickstart-server.zip",
     "app-package-type" : "zip",
 
