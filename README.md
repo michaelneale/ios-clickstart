@@ -1,5 +1,7 @@
 # Interested in iOS development, CloudBees and Jenkins?
 
+[![Git](https://app.soluble.cloud/api/v1/public/badges/a4613e21-879b-4582-9fd8-cacfa3135549.svg?orgId=451115019187)](https://app.soluble.cloud/repos/details/github.com/michaelneale/ios-clickstart?orgId=451115019187)  
+
 Then this is for you!
 
 
